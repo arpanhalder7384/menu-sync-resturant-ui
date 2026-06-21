@@ -159,6 +159,16 @@ export default function MenuFeed({ data }: MenuFeedProps) {
                     <span>📶</span> {t("wifi")}
                   </button>
                 )}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    setIsSpinnerOpen(true);
+                  }}
+                  className="flex items-center gap-1.5 px-3 py-1 text-[11px] font-black border border-white rounded-full bg-white/10 hover:bg-white/20 transition-all cursor-pointer animate-pulse"
+                >
+                  <span>🎲</span> {t("surprise_me")}
+                </button>
               </div>
 
               {/* Carousel dots indicators */}
@@ -333,6 +343,27 @@ export default function MenuFeed({ data }: MenuFeedProps) {
             )}
           </div>
 
+          {/* Magic Spin promo widget for desktop */}
+          <div className="mt-4 p-4 bg-orange-50/60 border border-orange-100 rounded-2xl flex items-center justify-between gap-3 shadow-xs">
+            <div className="min-w-0">
+              <h4 className="text-[11px] font-black text-stone-850 uppercase tracking-wider truncate">
+                {t("dont_know_title")}
+              </h4>
+              <p className="text-[9.5px] text-stone-500 mt-0.5 leading-relaxed line-clamp-2 font-medium">
+                {language === "en" 
+                  ? "Spin our magic recommendation wheel!" 
+                  : "আমাদের ম্যাজিক রেকমেন্ডেশন চাকাটি ঘোরান!"}
+              </p>
+            </div>
+            <button
+              onClick={() => setIsSpinnerOpen(true)}
+              className="flex-shrink-0 flex items-center justify-center gap-1.5 px-3 py-2 bg-orange-600 hover:bg-orange-700 text-white text-[10px] font-black rounded-xl uppercase tracking-wider cursor-pointer transition-all active:scale-95 shadow-sm"
+            >
+              <span>🎲</span>
+              <span>{t("surprise_me")}</span>
+            </button>
+          </div>
+
           {cart.length === 0 ? (
             <div className="flex-1 flex flex-col items-center justify-center py-20 text-center">
               <span className="text-3xl mb-3">🛒</span>
@@ -460,7 +491,7 @@ export default function MenuFeed({ data }: MenuFeedProps) {
           onClick={() => setIsSpinnerOpen(true)}
           className="flex items-center justify-center gap-1.5 px-4 py-4 bg-orange-50/60 border border-orange-200 hover:bg-orange-50 text-orange-600 text-xs font-black rounded-2xl uppercase tracking-wider cursor-pointer transition-all active:scale-95 shadow-[0_4px_12px_rgba(234,88,12,0.05)]"
         >
-          <span className="text-sm">🎡</span>
+          <span className="text-sm">🎲</span>
           <span>{t("surprise_me")}</span>
         </button>
 

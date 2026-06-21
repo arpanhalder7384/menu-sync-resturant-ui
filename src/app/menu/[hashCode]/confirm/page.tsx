@@ -14,20 +14,20 @@ export async function generateMetadata({
   
   if (!mapping) {
     return {
-      title: "Confirm Order | MenuSync",
+      title: "Confirm Order | PlateProject",
     };
   }
 
   const restaurant = MOCK_RESTAURANTS[mapping.restaurantId];
   if (!restaurant) {
     return {
-      title: "Confirm Order | MenuSync",
+      title: "Confirm Order | PlateProject",
     };
   }
 
   const name = restaurant.nameEn;
   return {
-    title: `Confirm Order - ${name} - Table ${mapping.tableNumber} | MenuSync`,
+    title: `Confirm Order - ${name} - Table ${mapping.tableNumber} | PlateProject`,
     description: `Confirm your selected items, enter special preparation notes, and submit your order via WhatsApp for ${name} (Table ${mapping.tableNumber}).`,
   };
 }

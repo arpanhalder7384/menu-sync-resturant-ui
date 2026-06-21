@@ -15,20 +15,20 @@ export async function generateMetadata({
   
   if (!mapping) {
     return {
-      title: "Menu Not Found | MenuSync",
+      title: "Menu Not Found | PlateProject",
     };
   }
 
   const restaurant = MOCK_RESTAURANTS[mapping.restaurantId];
   if (!restaurant) {
     return {
-      title: "Menu Not Found | MenuSync",
+      title: "Menu Not Found | PlateProject",
     };
   }
 
   const name = restaurant.nameEn;
   return {
-    title: `${name} - Table ${mapping.tableNumber} | MenuSync Digital Menu`,
+    title: `${name} - Table ${mapping.tableNumber} | PlateProject Digital Menu`,
     description: `Scan table QR codes, view ${name}'s digital menu (Table ${mapping.tableNumber}), get food recommendations, and place orders directly on WhatsApp.`,
   };
 }

@@ -175,6 +175,9 @@ export default function FoodSpinner({ items, isOpen, onClose }: FoodSpinnerProps
                           alt={item.nameEn}
                           className="w-full h-full object-cover bg-stone-800"
                         />
+                        <span className="absolute bottom-1 left-1 bg-black/75 backdrop-blur-xs text-white text-[8px] font-black px-1.5 py-0.5 rounded-md">
+                          {t("currency")}{item.price}
+                        </span>
                       </div>
                       <span className="text-[10px] font-extrabold text-stone-300 text-center line-clamp-1 truncate w-full">
                         {language === "en" ? item.nameEn : item.nameBn}
@@ -190,6 +193,9 @@ export default function FoodSpinner({ items, isOpen, onClose }: FoodSpinnerProps
                       alt={currentAppetizer.nameEn}
                       className="w-full h-full object-cover bg-stone-800"
                     />
+                    <span className="absolute bottom-1 left-1 bg-black/75 backdrop-blur-xs text-white text-[8px] font-black px-1.5 py-0.5 rounded-md">
+                      {t("currency")}{currentAppetizer.price}
+                    </span>
                   </div>
                   <span className="text-[10px] font-extrabold text-stone-200 text-center line-clamp-2 leading-tight">
                     {language === "en" ? currentAppetizer.nameEn : currentAppetizer.nameBn}
@@ -241,6 +247,9 @@ export default function FoodSpinner({ items, isOpen, onClose }: FoodSpinnerProps
                           alt={item.nameEn}
                           className="w-full h-full object-cover bg-stone-800"
                         />
+                        <span className="absolute bottom-1 left-1 bg-black/75 backdrop-blur-xs text-white text-[8px] font-black px-1.5 py-0.5 rounded-md">
+                          {t("currency")}{item.price}
+                        </span>
                       </div>
                       <span className="text-[10px] font-extrabold text-stone-300 text-center line-clamp-1 truncate w-full">
                         {language === "en" ? item.nameEn : item.nameBn}
@@ -256,6 +265,9 @@ export default function FoodSpinner({ items, isOpen, onClose }: FoodSpinnerProps
                       alt={currentEntree.nameEn}
                       className="w-full h-full object-cover bg-stone-800"
                     />
+                    <span className="absolute bottom-1 left-1 bg-black/75 backdrop-blur-xs text-white text-[8px] font-black px-1.5 py-0.5 rounded-md">
+                      {t("currency")}{currentEntree.price}
+                    </span>
                   </div>
                   <span className="text-[10px] font-extrabold text-stone-200 text-center line-clamp-2 leading-tight">
                     {language === "en" ? currentEntree.nameEn : currentEntree.nameBn}
@@ -307,6 +319,9 @@ export default function FoodSpinner({ items, isOpen, onClose }: FoodSpinnerProps
                           alt={item.nameEn}
                           className="w-full h-full object-cover bg-stone-800"
                         />
+                        <span className="absolute bottom-1 left-1 bg-black/75 backdrop-blur-xs text-white text-[8px] font-black px-1.5 py-0.5 rounded-md">
+                          {t("currency")}{item.price}
+                        </span>
                       </div>
                       <span className="text-[10px] font-extrabold text-stone-300 text-center line-clamp-1 truncate w-full">
                         {language === "en" ? item.nameEn : item.nameBn}
@@ -322,6 +337,9 @@ export default function FoodSpinner({ items, isOpen, onClose }: FoodSpinnerProps
                       alt={currentDessert.nameEn}
                       className="w-full h-full object-cover bg-stone-800"
                     />
+                    <span className="absolute bottom-1 left-1 bg-black/75 backdrop-blur-xs text-white text-[8px] font-black px-1.5 py-0.5 rounded-md">
+                      {t("currency")}{currentDessert.price}
+                    </span>
                   </div>
                   <span className="text-[10px] font-extrabold text-stone-200 text-center line-clamp-2 leading-tight">
                     {language === "en" ? currentDessert.nameEn : currentDessert.nameBn}

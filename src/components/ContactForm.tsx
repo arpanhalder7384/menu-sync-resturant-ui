@@ -25,9 +25,9 @@ export default function ContactForm() {
     setError(false);
 
     // Formulate pre-formatted template message
-    const message = `👋 Hi MenuSync Team,
+    const message = `👋 Hi PlateProject Team,
 
-I am interested in setting up MenuSync for my restaurant! Here are my details:
+I am interested in setting up PlateProject for my restaurant! Here are my details:
 
 • Owner Name: ${name}
 • Restaurant Name: ${shopName}

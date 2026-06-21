@@ -17,11 +17,11 @@ const fontHind = Hind_Siliguri({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://menusync.in"),
-  title: "MenuSync | Digital Menu, Food Discovery & WhatsApp Ordering Builder",
+  title: "PlateProject | Digital Menu, Food Discovery & WhatsApp Ordering Builder",
   description:
-    "MenuSync is a smart digital QR code restaurant menu builder. Allow diners to scan tables, browse menus in English/Bengali, spin for food suggestions, and place orders directly via WhatsApp.",
+    "PlateProject is a smart digital QR code restaurant menu builder. Allow diners to scan tables, browse menus in English/Bengali, spin for food suggestions, and place orders directly via WhatsApp.",
   keywords: [
-    "MenuSync",
+    "PlateProject",
     "Digital Menu for Restaurant",
     "QR Code Restaurant Menu Maker",
     "WhatsApp Ordering System",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "Bilingual Menu Bengali English",
     "Smart Dining Recommendations",
   ],
-  authors: [{ name: "MenuSync Team" }],
+  authors: [{ name: "PlateProject Team" }],
   alternates: {
     canonical: "/",
   },
@@ -38,17 +38,17 @@ export const metadata: Metadata = {
     icon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍽️</text></svg>',
   },
   openGraph: {
-    title: "MenuSync | Digital Menu, Food Discovery & WhatsApp Ordering Builder",
+    title: "PlateProject | Digital Menu, Food Discovery & WhatsApp Ordering Builder",
     description:
       "Transform your dining experience with a smart bilingual digital menu. Diners scan table QR codes, browse items in English or Bengali, spin the recommend wheel, and check out directly via WhatsApp.",
     url: "https://menusync.in",
-    siteName: "MenuSync",
+    siteName: "PlateProject",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MenuSync | QR Code Menu & WhatsApp Ordering for Restaurants",
+    title: "PlateProject | QR Code Menu & WhatsApp Ordering for Restaurants",
     description: "Give your restaurant a smart digital menu. Allow clients to scan, spin, and order via WhatsApp.",
   },
 };
@@ -67,10 +67,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
-              "name": "MenuSync",
+              "name": "PlateProject",
               "operatingSystem": "All",
               "applicationCategory": "BusinessApplication",
-              "description": "MenuSync is a smart digital QR code menu builder. Allow diners to scan table QR codes, browse bilingual menus, spin recommendation wheels, and place orders directly via WhatsApp.",
+              "description": "PlateProject is a smart digital QR code menu builder. Allow diners to scan table QR codes, browse bilingual menus, spin recommendation wheels, and place orders directly via WhatsApp.",
               "offers": {
                 "@type": "Offer",
                 "price": "0",

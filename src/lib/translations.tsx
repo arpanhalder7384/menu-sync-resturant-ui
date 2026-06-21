@@ -6,7 +6,7 @@ export type Language = "en" | "bn";
 
 export const translations = {
   en: {
-    menusync: "MenuSync",
+    menusync: "PlateProject",
     menusync_desc: "Digital Menu & Food Discovery",
     menusync_slogan: "Scan, spin, decide, and order via WhatsApp!",
     welcome_to: "Welcome to",
@@ -57,7 +57,7 @@ export const translations = {
     step_2_desc: "Explore items in English/Bengali or spin the wheel if undecided.",
     step_3: "Order via WhatsApp",
     step_3_desc: "Checkout directly. An automated, itemized order reaches the restaurant's WhatsApp.",
-    copyright: "© 2026 MenuSync. All rights reserved.",
+    copyright: "© 2026 PlateProject. All rights reserved.",
     back_to_menu: "Back to Menu",
     currency: "₹",
     // Cafe Harbour styling translations
@@ -85,7 +85,7 @@ export const translations = {
     wifi_no_password: "No password required (Open network)",
     full_menu: "FULL MENU",
     combo_total: "Combo Total",
-    contact_title: "Grow Your Restaurant with MenuSync",
+    contact_title: "Grow Your Restaurant with PlateProject",
     contact_desc: "Fill out the details below and we will set up your smart menu on WhatsApp in no time!",
     label_name: "Your Name",
     label_shop: "Restaurant / Shop Name",
@@ -114,7 +114,7 @@ export const translations = {
     total_bill_label: "Total Bill Amount"
   },
   bn: {
-    menusync: "মেনুসিঙ্ক",
+    menusync: "প্লেটপ্রজেক্ট",
     menusync_desc: "ডিজিটাল মেনু এবং খাবার আবিষ্কার",
     menusync_slogan: "স্ক্যান করুন, ঘোরান, সিদ্ধান্ত নিন এবং হোয়াটসঅ্যাপে অর্ডার করুন!",
     welcome_to: "স্বাগতম",
@@ -165,7 +165,7 @@ export const translations = {
     step_2_desc: "Explore items in English/Bengali or spin the wheel if undecided.",
     step_3: "হোয়াটসঅ্যাপে অর্ডার",
     step_3_desc: "Checkout directly. An automated, itemized order reaches the restaurant's WhatsApp.",
-    copyright: "© ২০২৬ মেনুসিঙ্ক। সর্বস্বত্ব সংরক্ষিত।",
+    copyright: "© ২০২৬ প্লেটপ্রজেক্ট। সর্বস্বত্ব সংরক্ষিত।",
     back_to_menu: "মেনুতে ফিরে যান",
     currency: "টাকা ",
     // Cafe Harbour styling translations in Bengali
@@ -193,7 +193,7 @@ export const translations = {
     wifi_no_password: "কোনো পাসওয়ার্ডের প্রয়োজন নেই (উন্মুক্ত নেটওয়ার্ক)",
     full_menu: "সম্পূর্ণ মেনু",
     combo_total: "কম্বো মোট",
-    contact_title: "মেনুসিঙ্কের সাথে আপনার রেস্তোরাঁ বাড়ান",
+    contact_title: "প্লেটপ্রজেক্টের সাথে আপনার রেস্তোরাঁ বাড়ান",
     contact_desc: "নিচের তথ্যগুলো পূরণ করুন এবং আমরা দ্রুত আপনার হোয়াটসঅ্যাপে স্মার্ট মেনু সেটআপ করে দেব!",
     label_name: "আপনার নাম",
     label_shop: "রেস্তোরাঁ / দোকানের নাম",
