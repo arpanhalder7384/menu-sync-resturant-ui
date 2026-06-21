@@ -37,7 +37,7 @@ I am interested in setting up MenuSync for my restaurant! Here are my details:
 Please contact me back to set up the system. Thank you!`;
 
     // Load WhatsApp number from environment securely
-    const targetNumber = process.env.NEXT_PUBLIC_CONTACT_WHATSAPP_NUMBER || "7384190892";
+    const targetNumber = process.env.NEXT_PUBLIC_CONTACT_WHATSAPP_NUMBER || "6294267705";
     const cleanNumber = targetNumber.replace(/\D/g, "");
     
     const waUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
