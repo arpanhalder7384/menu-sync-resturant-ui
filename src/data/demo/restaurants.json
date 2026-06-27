@@ -333,5 +333,80 @@
       "ssid": "CafeHarbour_5G",
       "password": "harbour@2026"
     }
+  },
+  "REST004": {
+    "id": "REST004",
+    "nameEn": "Dakshin Delights",
+    "nameBn": "দক্ষিণ ডিলাইটস",
+    "whatsappNumber": "+917384190892",
+    "menu": [
+      {
+        "id": "sd1",
+        "nameEn": "Special Masala Dosa",
+        "nameBn": "স্পেশাল মসলা দোসা",
+        "price": 120,
+        "image": "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=400&q=80",
+        "descriptionEn": "Crispy rice crepe filled with spiced potato mash, served with sambar and coconut chutney.",
+        "descriptionBn": "মশলাদার আলু দিয়ে ভরা মুচমুচে চালের ক্রেপ, সম্বর এবং নারকেল চাটনির সাথে পরিবেশিত।",
+        "category": "Main",
+        "isSpecial": true,
+        "isVeg": true
+      },
+      {
+        "id": "sd2",
+        "nameEn": "Steamed Rava Idli (2 Pcs)",
+        "nameBn": "স্টিমড রাভা ইডলি (২ পিস)",
+        "price": 80,
+        "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=400&q=80",
+        "descriptionEn": "Soft, fluffy steamed semolina cakes served with piping hot sambar.",
+        "descriptionBn": "গরম সম্বর ডাল সহ পরিবেশিত নরম তুলতুলে সুজির ইডলি।",
+        "category": "Starter",
+        "isSpecial": false,
+        "isVeg": true
+      },
+      {
+        "id": "sd3",
+        "nameEn": "Madras Filter Coffee",
+        "nameBn": "মাদ্রাজ ফিল্টার কফি",
+        "price": 50,
+        "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80",
+        "descriptionEn": "Traditional South Indian frothy chicory-blended milk coffee.",
+        "descriptionBn": "ঐতিহ্যবাহী দক্ষিণ ভারতীয় ফেনিল ফিল্টার কফি।",
+        "category": "Drink",
+        "isSpecial": true,
+        "isVeg": true,
+        "pairingPartnerId": "sd1",
+        "pairingReasonEn": "Perfect hot beverage companion after a crispy Masala Dosa!",
+        "pairingReasonBn": "মুচমুচে মসলা দোসার পরে পারফেক্ট গরম পানীয়!"
+      },
+      {
+        "id": "sd4",
+        "nameEn": "Crispy Medu Vada (2 Pcs)",
+        "nameBn": "ক্রিস্পি মেদু বড়া (২ পিস)",
+        "price": 90,
+        "image": "https://images.unsplash.com/photo-1589302168068-964664d93dc9?auto=format&fit=crop&w=400&q=80",
+        "descriptionEn": "Crispy golden fried lentil donuts seasoned with pepper, ginger, and curry leaves.",
+        "descriptionBn": "গোলমরিচ, আদা এবং কারিপাতা দিয়ে তৈরি মুচমুচে ভাজা ডাল বড়া।",
+        "category": "Starter",
+        "isSpecial": false,
+        "isVeg": true
+      },
+      {
+        "id": "sd5",
+        "nameEn": "Rava Kesari Bath",
+        "nameBn": "রাভা কেসরি ভাত",
+        "price": 70,
+        "image": "https://images.unsplash.com/photo-1601050690597-df056fb4ce78?auto=format&fit=crop&w=400&q=80",
+        "descriptionEn": "Sweet semolina pudding cooked with ghee, saffron, raisins, and cashew nuts.",
+        "descriptionBn": "ঘি, জাফরান, কিশমিশ এবং কাজুবাদাম দিয়ে তৈরি মিষ্টি সুজির হালুয়া।",
+        "category": "Dessert",
+        "isSpecial": false,
+        "isVeg": true
+      }
+    ],
+    "wifiDetails": {
+      "ssid": "Dakshin_Guest_5G",
+      "password": "dosa@filtercoffee"
+    }
   }
 }

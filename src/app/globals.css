@@ -6,6 +6,8 @@
   --primary: #ea580c;
   --primary-dark: #c2410c;
   --accent: #f59e0b;
+  --font-outfit: 'Outfit', sans-serif;
+  --font-hind: 'Hind Siliguri', sans-serif;
 }
 
 @theme inline {

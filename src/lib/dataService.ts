@@ -56,11 +56,14 @@ export function getQRMapping(restaurantCode: string, tableCode: string): QRMappi
   const restaurant = restaurantsData[restMapping.restaurantId];
   if (!restaurant) return undefined;
 
+  const isDemo = restMapping.restaurantId in demoRestaurantsJson;
+
   return {
     restaurantId: restMapping.restaurantId,
     restaurantNameEn: restaurant.nameEn,
     restaurantNameBn: restaurant.nameBn,
     tableNumber: tableNumber,
+    isDemo: isDemo,
   };
 }
 

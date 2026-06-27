@@ -23,6 +23,7 @@ interface MenuData {
     ssid: string;
     password?: string;
   };
+  isDemo?: boolean;
 }
 
 interface MenuFeedProps {
@@ -118,36 +119,41 @@ export default function MenuFeed({ data }: MenuFeedProps) {
         <div className="lg:col-span-2 bg-white rounded-3xl overflow-hidden border border-stone-200/50 shadow-[0_4px_20px_rgba(0,0,0,0.02)] flex flex-col pb-12">
           
           {/* Top Banner (Cafe Harbor Style Hero Header) */}
-          <div className="relative w-full h-56 md:h-64 flex flex-col justify-end p-5 text-white overflow-hidden">
+          <div className="relative w-full h-64 md:h-72 flex flex-col justify-end p-6 text-white overflow-hidden">
             {/* Banner Background Image Layer (Preload & High Priority) */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=800&q=80"
               alt="Restaurant Banner"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover scale-105"
               fetchPriority="high"
             />
             {/* Overlay Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent" />
+            
             {/* Back navigation & Language Selector */}
-            <div className="absolute top-4 inset-x-4 flex items-center justify-between z-10">
-              <Link
-                href="/"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-xs text-white hover:bg-black/60 transition-colors text-center"
-              >
-                ←
-              </Link>
+            <div className={`absolute top-5 inset-x-5 flex items-center z-10 ${data.isDemo ? "justify-between" : "justify-end"}`}>
+              {data.isDemo && (
+                <Link
+                  href="/"
+                  className="w-10 h-10 flex items-center justify-center rounded-xl bg-black/40 backdrop-blur-md text-white hover:bg-black/60 transition-all border border-white/10 active:scale-95 text-center shadow-lg"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </Link>
+              )}
               <LanguageSelector />
             </div>
 
             {/* Cafe Info Overlay */}
-            <div className="flex flex-col gap-2">
-              <h2 className="text-xl md:text-2xl font-black tracking-wide drop-shadow-md">
-                {t("welcome_to")} {restaurantName.toUpperCase()} | Contemporary Hangout
+            <div className="flex flex-col gap-3 relative z-10">
+              <h2 className="text-2xl md:text-3xl font-black tracking-tight drop-shadow-md bg-gradient-to-r from-white via-white to-stone-200 bg-clip-text text-transparent">
+                {t("welcome_to")} {restaurantName}
               </h2>
               
-              <div className="flex items-center gap-3">
-                <button className="flex items-center gap-1.5 px-3 py-1 text-[11px] font-black border border-white rounded-full bg-white/10 hover:bg-white/20 transition-all cursor-pointer">
+              <div className="flex flex-wrap items-center gap-2">
+                <button className="flex items-center gap-1.5 px-3.5 py-1.5 text-[11px] font-black border border-white/20 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all active:scale-95 cursor-pointer shadow-sm">
                   <span>📍</span> {t("directions")}
                 </button>
                 {data.wifiDetails && (
@@ -157,7 +163,7 @@ export default function MenuFeed({ data }: MenuFeedProps) {
                       e.preventDefault();
                       setIsWifiModalOpen(true);
                     }}
-                    className="flex items-center gap-1.5 px-3 py-1 text-[11px] font-black border border-white rounded-full bg-white/10 hover:bg-white/20 transition-all cursor-pointer"
+                    className="flex items-center gap-1.5 px-3.5 py-1.5 text-[11px] font-black border border-white/20 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all active:scale-95 cursor-pointer shadow-sm"
                   >
                     <span>📶</span> {t("wifi")}
                   </button>
@@ -168,28 +174,28 @@ export default function MenuFeed({ data }: MenuFeedProps) {
                     e.preventDefault();
                     setIsSpinnerOpen(true);
                   }}
-                  className="flex items-center gap-1.5 px-3 py-1 text-[11px] font-black border border-white rounded-full bg-white/10 hover:bg-white/20 transition-all cursor-pointer animate-pulse"
+                  className="flex items-center gap-1.5 px-3.5 py-1.5 text-[11px] font-black border border-orange-500/30 rounded-xl bg-orange-500/25 hover:bg-orange-500/35 backdrop-blur-md transition-all active:scale-95 cursor-pointer shadow-md shadow-orange-500/10"
                 >
-                  <span>🎲</span> {t("surprise_me")}
+                  <span className="animate-spin duration-[4000ms]">🎲</span> {t("surprise_me")}
                 </button>
               </div>
 
               {/* Carousel dots indicators */}
               <div className="flex gap-1.5 mt-2">
-                <span className="w-4 h-1 bg-white rounded-full" />
-                <span className="w-1 h-1 bg-white/50 rounded-full" />
-                <span className="w-1 h-1 bg-white/50 rounded-full" />
+                <span className="w-6 h-1 bg-orange-500 rounded-full transition-all duration-300" />
+                <span className="w-1.5 h-1.5 bg-white/40 rounded-full" />
+                <span className="w-1.5 h-1.5 bg-white/40 rounded-full" />
               </div>
             </div>
           </div>
 
           {/* Title & Tagline Section */}
-          <div className="px-5 pt-6 pb-2 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="px-5 pt-7 pb-2 flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <h1 className="text-xl md:text-2xl font-black text-stone-900 tracking-tight">
-                {restaurantName.toUpperCase()}
+              <h1 className="text-2xl font-black text-stone-900 tracking-tight leading-none">
+                {restaurantName}
               </h1>
-              <p className="text-[10px] font-black text-stone-400 tracking-widest uppercase mt-0.5">
+              <p className="text-[10px] font-black text-orange-600/80 tracking-widest uppercase mt-2">
                 {language === "en" ? "ADDA • COFFEE • FRIENDSHIP" : "আড্ডা • কফি • বন্ধুত্ব"}
               </p>
             </div>
@@ -197,39 +203,39 @@ export default function MenuFeed({ data }: MenuFeedProps) {
             {/* Search & Table Number Row */}
             <div className="flex items-center gap-3 w-full md:w-auto">
               {/* Search Input */}
-              <div className="relative flex-1 md:w-56">
+              <div className="relative flex-1 md:w-64">
                 <input
                   type="text"
                   placeholder={t("search_placeholder")}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2.5 bg-stone-100 border-none rounded-xl text-xs text-stone-900 focus:outline-none focus:ring-2 focus:ring-orange-500/10 placeholder-stone-400"
+                  className="w-full pl-10 pr-4 py-3 bg-stone-50 border border-stone-200/60 rounded-xl text-xs text-stone-900 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500/40 transition-all placeholder-stone-400 shadow-inner"
                 />
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 text-xs">
+                <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 text-xs">
                   🔍
                 </span>
               </div>
 
-              {/* Table Badge */}
-              <div className="bg-orange-50 text-orange-700 border border-orange-200/50 px-4.5 py-2.5 text-xs font-black rounded-xl whitespace-nowrap shadow-xs">
+              {/* Glowing Brass Table Badge */}
+              <div className="bg-gradient-to-r from-orange-500 to-amber-500 text-white border-none px-4.5 py-3 text-xs font-black rounded-xl whitespace-nowrap shadow-[0_4px_15px_rgba(234,88,12,0.2)]">
                 {t("table").toUpperCase()} {formatTableNumber(data.tableNumber)}
               </div>
             </div>
           </div>
 
           {/* Underlined Category Nav Tabs */}
-          <div className="px-5 border-b border-stone-100">
-            <div className="flex gap-6 overflow-x-auto no-scrollbar py-3 scroll-smooth">
+          <div className="px-5 border-b border-stone-100/60">
+            <div className="flex gap-3.5 overflow-x-auto no-scrollbar py-4.5 scroll-smooth">
               {categories.map((category) => {
                 const isActive = activeCategory === category;
                 return (
                   <button
                     key={category}
                     onClick={() => setActiveCategory(category)}
-                    className={`pb-2.5 text-xs font-black whitespace-nowrap tracking-wider transition-all cursor-pointer border-b-2 ${
+                    className={`px-4.5 py-2.5 text-xs font-black whitespace-nowrap tracking-wide transition-all cursor-pointer rounded-full ${
                       isActive
-                        ? "border-orange-600 text-orange-600 font-extrabold"
-                        : "border-transparent text-stone-500 hover:text-stone-700"
+                        ? "bg-stone-900 text-white shadow-md shadow-stone-950/20"
+                        : "bg-stone-100/70 text-stone-550 hover:bg-stone-200/40 hover:text-stone-800"
                     }`}
                   >
                     {getCategoryLabel(category)}
@@ -247,9 +253,9 @@ export default function MenuFeed({ data }: MenuFeedProps) {
                 setSelectedVegFilter("all");
                 setIsChefRecommendedOnly(false);
               }}
-              className={`px-4.5 py-2 text-[11px] font-black rounded-full border transition-all cursor-pointer whitespace-nowrap ${
+              className={`px-4.5 py-2.5 text-[11px] font-black rounded-full border transition-all cursor-pointer whitespace-nowrap ${
                 selectedVegFilter === "all" && !isChefRecommendedOnly
-                  ? "bg-orange-600 border-orange-600 text-white shadow-sm shadow-orange-500/15"
+                  ? "bg-orange-600 border-orange-600 text-white shadow-sm shadow-orange-500/20"
                   : "bg-white border-stone-200 text-stone-500 hover:text-stone-900 hover:border-stone-300"
               }`}
             >
@@ -262,13 +268,13 @@ export default function MenuFeed({ data }: MenuFeedProps) {
                 setSelectedVegFilter("veg");
                 setIsChefRecommendedOnly(false);
               }}
-              className={`flex items-center gap-1 px-4.5 py-2 text-[11px] font-black rounded-full border transition-all cursor-pointer whitespace-nowrap ${
+              className={`flex items-center gap-1.5 px-4.5 py-2.5 text-[11px] font-black rounded-full border transition-all cursor-pointer whitespace-nowrap ${
                 selectedVegFilter === "veg"
-                  ? "bg-green-600 border-green-600 text-white shadow-sm shadow-green-500/15"
+                  ? "bg-green-600 border-green-600 text-white shadow-sm shadow-green-500/20"
                   : "bg-white border-stone-200 text-stone-500 hover:text-stone-900 hover:border-stone-300"
               }`}
             >
-              <span>🌱</span>
+              <span className="text-[10px]">🌱</span>
               <span>{t("vegetarian")}</span>
             </button>
 
@@ -278,13 +284,13 @@ export default function MenuFeed({ data }: MenuFeedProps) {
                 setSelectedVegFilter("non-veg");
                 setIsChefRecommendedOnly(false);
               }}
-              className={`flex items-center gap-1 px-4.5 py-2 text-[11px] font-black rounded-full border transition-all cursor-pointer whitespace-nowrap ${
+              className={`flex items-center gap-1.5 px-4.5 py-2.5 text-[11px] font-black rounded-full border transition-all cursor-pointer whitespace-nowrap ${
                 selectedVegFilter === "non-veg"
-                  ? "bg-red-600 border-red-600 text-white shadow-sm shadow-red-500/15"
+                  ? "bg-red-600 border-red-600 text-white shadow-sm shadow-red-500/20"
                   : "bg-white border-stone-200 text-stone-500 hover:text-stone-900 hover:border-stone-300"
               }`}
             >
-              <span>🍗</span>
+              <span className="text-[10px]">🍗</span>
               <span>{t("non_vegetarian")}</span>
             </button>
 
@@ -294,13 +300,13 @@ export default function MenuFeed({ data }: MenuFeedProps) {
                 setSelectedVegFilter("all");
                 setIsChefRecommendedOnly(true);
               }}
-              className={`flex items-center gap-1 px-4.5 py-2 text-[11px] font-black rounded-full border transition-all cursor-pointer whitespace-nowrap ${
+              className={`flex items-center gap-1.5 px-4.5 py-2.5 text-[11px] font-black rounded-full border transition-all cursor-pointer whitespace-nowrap ${
                 isChefRecommendedOnly
-                  ? "bg-amber-500 border-amber-500 text-stone-955 shadow-sm shadow-amber-500/15"
+                  ? "bg-amber-500 border-amber-500 text-stone-950 shadow-sm shadow-amber-500/20"
                   : "bg-white border-stone-200 text-stone-500 hover:text-stone-900 hover:border-stone-300"
               }`}
             >
-              <span>⭐</span>
+              <span className="text-[10px]">⭐</span>
               <span>{t("chef_recommended")}</span>
             </button>
           </div>

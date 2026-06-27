@@ -9,7 +9,7 @@ export default function SimulatedTables() {
   const { language, t } = useTranslation();
   return (
     <section id="demo-section" className="py-12 scroll-mt-20 relative">
-      
+
       {/* Decorative gradient blur */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-orange-100/10 blur-3xl pointer-events-none -z-10" />
 
@@ -26,8 +26,8 @@ export default function SimulatedTables() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
-        
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+
         {/* Cafe Adda Table 01 */}
         <Link
           href={`/menu/${generateRestaurantCode("+917074266873")}?table=${generateTableCode("+917074266873", "01")}`}
@@ -48,11 +48,11 @@ export default function SimulatedTables() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
             </div>
-            
+
             <h3 className="text-base font-black text-stone-900 group-hover:text-orange-600 transition-colors tracking-tight">
               {language === "en" ? "Cafe Adda" : "ক্যাফে আড্ডা"}
             </h3>
-            
+
             <p className="text-xs text-stone-450 mt-2 leading-relaxed font-extrabold">
               {language === "en" ? "Table 01 — QR Hash Scan" : "টেবিল ০১ — কিউআর হ্যাশ স্ক্যান"}
             </p>
@@ -86,11 +86,11 @@ export default function SimulatedTables() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
             </div>
-            
+
             <h3 className="text-base font-black text-stone-900 group-hover:text-amber-600 transition-colors tracking-tight">
               {language === "en" ? "Cafe Harbour" : "ক্যাফে হারবার"}
             </h3>
-            
+
             <p className="text-xs text-stone-450 mt-2 leading-relaxed font-extrabold">
               {language === "en" ? "Table 03 — QR Hash Scan" : "টেবিল ০৩ — কিউআর হ্যাশ স্ক্যান"}
             </p>
@@ -106,7 +106,7 @@ export default function SimulatedTables() {
 
         {/* Spice Garden Table 04 */}
         <Link
-          href={`/menu/${generateRestaurantCode("+917384190892")}?table=${generateTableCode("+917384190892", "04")}`}
+          href={`/menu/${generateRestaurantCode("+916294267705")}?table=${generateTableCode("+916294267705", "03")}`}
           className="relative flex flex-col justify-between p-6 bg-gradient-to-br from-white to-stone-50/10 border border-stone-200/60 border-t-4 border-t-amber-500 rounded-3xl shadow-[0_4px_25px_rgba(0,0,0,0.015)] hover:shadow-[0_15px_35px_rgba(245,158,11,0.1)] hover:border-amber-500/30 transition-all transform hover:-translate-y-1.5 group overflow-hidden"
         >
           {/* Decorative Top-Right Brass Table Badge */}
@@ -124,11 +124,11 @@ export default function SimulatedTables() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
             </div>
-            
+
             <h3 className="text-base font-black text-stone-900 group-hover:text-amber-500 transition-colors tracking-tight">
               {language === "en" ? "Spice Garden" : "স্পাইস গার্ডেন"}
             </h3>
-            
+
             <p className="text-xs text-stone-450 mt-2 leading-relaxed font-extrabold">
               {language === "en" ? "Table 04 — QR Hash Scan" : "টেবিল ০৪ — কিউআর হ্যাশ স্ক্যান"}
             </p>
@@ -139,6 +139,44 @@ export default function SimulatedTables() {
               {language === "en" ? "Simulate Scan" : "স্ক্যান সিমুলেট করুন"}
             </span>
             <span className="text-stone-300 group-hover:text-orange-500 transition-colors font-black text-sm">→</span>
+          </div>
+        </Link>
+
+        {/* Dakshin Delights Table 02 */}
+        <Link
+          href={`/menu/${generateRestaurantCode("+917384190892")}?table=${generateTableCode("+917384190892", "02")}`}
+          className="relative flex flex-col justify-between p-6 bg-gradient-to-br from-white to-stone-50/10 border border-stone-200/60 border-t-4 border-t-emerald-500 rounded-3xl shadow-[0_4px_25px_rgba(0,0,0,0.015)] hover:shadow-[0_15px_35px_rgba(16,185,129,0.1)] hover:border-emerald-500/30 transition-all transform hover:-translate-y-1.5 group overflow-hidden"
+        >
+          {/* Decorative Top-Right Brass Table Badge */}
+          <div className="absolute -top-2 -right-2 w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-end justify-start p-3 transform -rotate-12 group-hover:rotate-0 transition-transform duration-500 shadow-md">
+            <span className="text-[9px] font-black text-white tracking-tight">T-02</span>
+          </div>
+
+          <div className="pr-8">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="px-2 py-0.5 text-[8.5px] font-black uppercase tracking-wider bg-emerald-50 border border-emerald-200/50 text-emerald-700 rounded-md">
+                {language === "en" ? "DAKSHIN DELIGHTS" : "দক্ষিণ ডিলাইটস"}
+              </span>
+              <span className="flex h-2 w-2 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              </span>
+            </div>
+
+            <h3 className="text-base font-black text-stone-900 group-hover:text-emerald-600 transition-colors tracking-tight">
+              {language === "en" ? "Dakshin Delights" : "দক্ষিণ ডিলাইটস"}
+            </h3>
+
+            <p className="text-xs text-stone-450 mt-2 leading-relaxed font-extrabold">
+              {language === "en" ? "Table 02 — QR Hash Scan" : "টেবিল ০২ — কিউআর হ্যাশ স্ক্যান"}
+            </p>
+          </div>
+
+          <div className="mt-8 flex items-center justify-between">
+            <span className="text-[11px] font-black text-emerald-600 inline-flex items-center gap-1 group-hover:gap-2 transition-all uppercase tracking-wider">
+              {language === "en" ? "Simulate Scan" : "স্ক্যান সিমুলেট করুন"}
+            </span>
+            <span className="text-stone-300 group-hover:text-emerald-500 transition-colors font-black text-sm">→</span>
           </div>
         </Link>
 

@@ -68,6 +68,7 @@ export default async function MenuPage({
     whatsappNumber: restaurant.whatsappNumber,
     menu: restaurant.menu,
     wifiDetails: restaurant.wifiDetails,
+    isDemo: mapping.isDemo,
   };
 
   return <MenuFeed data={data} />;

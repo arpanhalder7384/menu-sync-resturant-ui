@@ -2,16 +2,34 @@
   {
     "restaurantId": "REST001",
     "mobile": "+917074266873",
-    "tables": ["01", "02", "03", "04", "05", "06"]
+    "tables": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06"
+    ]
   },
   {
     "restaurantId": "REST002",
     "mobile": "+917384190892",
-    "tables": ["04"]
+    "tables": [
+      "04"
+    ]
   },
   {
     "restaurantId": "REST003",
     "mobile": "+916294267705",
-    "tables": ["03"]
+    "tables": [
+      "03"
+    ]
+  },
+  {
+    "restaurantId": "REST004",
+    "mobile": "+917384190892",
+    "tables": [
+      "02"
+    ]
   }
 ]

@@ -33,6 +33,7 @@ export interface QRMapping {
   restaurantNameEn: string;
   restaurantNameBn: string;
   tableNumber: string;
+  isDemo?: boolean;
 }
 
 

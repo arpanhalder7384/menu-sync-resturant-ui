@@ -1,19 +1,7 @@
 import type { Metadata } from "next";
-import { Outfit, Hind_Siliguri } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/translations";
 import { CartProvider } from "@/lib/cart";
-
-const fontOutfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-});
-
-const fontHind = Hind_Siliguri({
-  subsets: ["bengali"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-hind",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://menusync.in"),
@@ -59,8 +47,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fontOutfit.variable} ${fontHind.variable} antialiased`}>
+    <html lang="en" className="antialiased">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
