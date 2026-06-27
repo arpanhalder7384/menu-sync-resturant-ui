@@ -33,11 +33,11 @@ interface MenuFeedProps {
 export default function MenuFeed({ data }: MenuFeedProps) {
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
-  
+
   // Custom filter pills states
   const [selectedVegFilter, setSelectedVegFilter] = useState<"all" | "veg" | "non-veg">("all");
   const [isChefRecommendedOnly, setIsChefRecommendedOnly] = useState<boolean>(false);
-  
+
   const [isSpinnerOpen, setIsSpinnerOpen] = useState(false);
   const [selectedDetailItem, setSelectedDetailItem] = useState<MenuItem | null>(null);
   const [isWifiModalOpen, setIsWifiModalOpen] = useState(false);
@@ -74,7 +74,7 @@ export default function MenuFeed({ data }: MenuFeedProps) {
     // Category filter
     const matchesCategory =
       activeCategory === "All" || item.category === activeCategory;
-    
+
     // Search query filter
     const name = language === "en" ? item.nameEn : item.nameBn;
     const desc = language === "en" ? item.descriptionEn : item.descriptionBn;
@@ -111,13 +111,13 @@ export default function MenuFeed({ data }: MenuFeedProps) {
 
   return (
     <div className="min-h-screen bg-stone-100 flex flex-col pb-16">
-      
+
       {/* Main Grid Wrapper: 3 Columns on Desktop, 1 Column on Mobile */}
       <div className="max-w-6xl w-full mx-auto px-4 py-6 md:py-10 flex-1 grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-        
+
         {/* Left Side: The Restaurant & Menu Panel (Takes 2/3 width on desktop) */}
         <div className="lg:col-span-2 bg-white rounded-3xl overflow-hidden border border-stone-200/50 shadow-[0_4px_20px_rgba(0,0,0,0.02)] flex flex-col pb-12">
-          
+
           {/* Top Banner (Cafe Harbor Style Hero Header) */}
           <div className="relative w-full h-64 md:h-72 flex flex-col justify-end p-6 text-white overflow-hidden">
             {/* Banner Background Image Layer (Preload & High Priority) */}
@@ -130,7 +130,7 @@ export default function MenuFeed({ data }: MenuFeedProps) {
             />
             {/* Overlay Gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent" />
-            
+
             {/* Back navigation & Language Selector */}
             <div className={`absolute top-5 inset-x-5 flex items-center z-10 ${data.isDemo ? "justify-between" : "justify-end"}`}>
               {data.isDemo && (
@@ -151,11 +151,11 @@ export default function MenuFeed({ data }: MenuFeedProps) {
               <h2 className="text-2xl md:text-3xl font-black tracking-tight drop-shadow-md bg-gradient-to-r from-white via-white to-stone-200 bg-clip-text text-transparent">
                 {t("welcome_to")} {restaurantName}
               </h2>
-              
+
               <div className="flex flex-wrap items-center gap-2">
-                <button className="flex items-center gap-1.5 px-3.5 py-1.5 text-[11px] font-black border border-white/20 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all active:scale-95 cursor-pointer shadow-sm">
+                {/* <button className="flex items-center gap-1.5 px-3.5 py-1.5 text-[11px] font-black border border-white/20 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all active:scale-95 cursor-pointer shadow-sm">
                   <span>📍</span> {t("directions")}
-                </button>
+                </button> */}
                 {data.wifiDetails && (
                   <button
                     onClick={(e) => {
@@ -168,7 +168,7 @@ export default function MenuFeed({ data }: MenuFeedProps) {
                     <span>📶</span> {t("wifi")}
                   </button>
                 )}
-                <button
+                {/* <button
                   onClick={(e) => {
                     e.stopPropagation();
                     e.preventDefault();
@@ -177,7 +177,7 @@ export default function MenuFeed({ data }: MenuFeedProps) {
                   className="flex items-center gap-1.5 px-3.5 py-1.5 text-[11px] font-black border border-orange-500/30 rounded-xl bg-orange-500/25 hover:bg-orange-500/35 backdrop-blur-md transition-all active:scale-95 cursor-pointer shadow-md shadow-orange-500/10"
                 >
                   <span className="animate-spin duration-[4000ms]">🎲</span> {t("surprise_me")}
-                </button>
+                </button> */}
               </div>
 
               {/* Carousel dots indicators */}
@@ -232,11 +232,10 @@ export default function MenuFeed({ data }: MenuFeedProps) {
                   <button
                     key={category}
                     onClick={() => setActiveCategory(category)}
-                    className={`px-4.5 py-2.5 text-xs font-black whitespace-nowrap tracking-wide transition-all cursor-pointer rounded-full ${
-                      isActive
+                    className={`px-4.5 py-2.5 text-xs font-black whitespace-nowrap tracking-wide transition-all cursor-pointer rounded-full ${isActive
                         ? "bg-stone-900 text-white shadow-md shadow-stone-950/20"
                         : "bg-stone-100/70 text-stone-550 hover:bg-stone-200/40 hover:text-stone-800"
-                    }`}
+                      }`}
                   >
                     {getCategoryLabel(category)}
                   </button>
@@ -253,11 +252,10 @@ export default function MenuFeed({ data }: MenuFeedProps) {
                 setSelectedVegFilter("all");
                 setIsChefRecommendedOnly(false);
               }}
-              className={`px-4.5 py-2.5 text-[11px] font-black rounded-full border transition-all cursor-pointer whitespace-nowrap ${
-                selectedVegFilter === "all" && !isChefRecommendedOnly
+              className={`px-4.5 py-2.5 text-[11px] font-black rounded-full border transition-all cursor-pointer whitespace-nowrap ${selectedVegFilter === "all" && !isChefRecommendedOnly
                   ? "bg-orange-600 border-orange-600 text-white shadow-sm shadow-orange-500/20"
                   : "bg-white border-stone-200 text-stone-500 hover:text-stone-900 hover:border-stone-300"
-              }`}
+                }`}
             >
               {t("all_items")}
             </button>
@@ -268,11 +266,10 @@ export default function MenuFeed({ data }: MenuFeedProps) {
                 setSelectedVegFilter("veg");
                 setIsChefRecommendedOnly(false);
               }}
-              className={`flex items-center gap-1.5 px-4.5 py-2.5 text-[11px] font-black rounded-full border transition-all cursor-pointer whitespace-nowrap ${
-                selectedVegFilter === "veg"
+              className={`flex items-center gap-1.5 px-4.5 py-2.5 text-[11px] font-black rounded-full border transition-all cursor-pointer whitespace-nowrap ${selectedVegFilter === "veg"
                   ? "bg-green-600 border-green-600 text-white shadow-sm shadow-green-500/20"
                   : "bg-white border-stone-200 text-stone-500 hover:text-stone-900 hover:border-stone-300"
-              }`}
+                }`}
             >
               <span className="text-[10px]">🌱</span>
               <span>{t("vegetarian")}</span>
@@ -284,11 +281,10 @@ export default function MenuFeed({ data }: MenuFeedProps) {
                 setSelectedVegFilter("non-veg");
                 setIsChefRecommendedOnly(false);
               }}
-              className={`flex items-center gap-1.5 px-4.5 py-2.5 text-[11px] font-black rounded-full border transition-all cursor-pointer whitespace-nowrap ${
-                selectedVegFilter === "non-veg"
+              className={`flex items-center gap-1.5 px-4.5 py-2.5 text-[11px] font-black rounded-full border transition-all cursor-pointer whitespace-nowrap ${selectedVegFilter === "non-veg"
                   ? "bg-red-600 border-red-600 text-white shadow-sm shadow-red-500/20"
                   : "bg-white border-stone-200 text-stone-500 hover:text-stone-900 hover:border-stone-300"
-              }`}
+                }`}
             >
               <span className="text-[10px]">🍗</span>
               <span>{t("non_vegetarian")}</span>
@@ -300,11 +296,10 @@ export default function MenuFeed({ data }: MenuFeedProps) {
                 setSelectedVegFilter("all");
                 setIsChefRecommendedOnly(true);
               }}
-              className={`flex items-center gap-1.5 px-4.5 py-2.5 text-[11px] font-black rounded-full border transition-all cursor-pointer whitespace-nowrap ${
-                isChefRecommendedOnly
+              className={`flex items-center gap-1.5 px-4.5 py-2.5 text-[11px] font-black rounded-full border transition-all cursor-pointer whitespace-nowrap ${isChefRecommendedOnly
                   ? "bg-amber-500 border-amber-500 text-stone-950 shadow-sm shadow-amber-500/20"
                   : "bg-white border-stone-200 text-stone-500 hover:text-stone-900 hover:border-stone-300"
-              }`}
+                }`}
             >
               <span className="text-[10px]">⭐</span>
               <span>{t("chef_recommended")}</span>
@@ -359,8 +354,8 @@ export default function MenuFeed({ data }: MenuFeedProps) {
                 {t("dont_know_title")}
               </h4>
               <p className="text-[9.5px] text-stone-500 mt-0.5 leading-relaxed line-clamp-2 font-medium">
-                {language === "en" 
-                  ? "Spin our magic recommendation wheel!" 
+                {language === "en"
+                  ? "Spin our magic recommendation wheel!"
                   : "আমাদের ম্যাজিক রেকমেন্ডেশন চাকাটি ঘোরান!"}
               </p>
             </div>
@@ -382,7 +377,7 @@ export default function MenuFeed({ data }: MenuFeedProps) {
             </div>
           ) : (
             <div className="flex flex-col flex-1 min-h-0 mt-4 justify-between">
-              
+
               {/* Scrollable list items */}
               <div className="flex-1 overflow-y-auto pr-1 space-y-4 no-scrollbar max-h-[45vh]">
                 {cart.map(({ item, quantity }) => {
@@ -394,14 +389,12 @@ export default function MenuFeed({ data }: MenuFeedProps) {
                     >
                       <div className="flex items-center gap-2 min-w-0">
                         <span
-                          className={`flex-shrink-0 w-2.5 h-2.5 border rounded p-[1.5px] ${
-                            item.isVeg ? "border-green-600" : "border-red-600"
-                          }`}
+                          className={`flex-shrink-0 w-2.5 h-2.5 border rounded p-[1.5px] ${item.isVeg ? "border-green-600" : "border-red-600"
+                            }`}
                         >
                           <span
-                            className={`w-full h-full rounded-full block ${
-                              item.isVeg ? "bg-green-600" : "bg-red-600"
-                            }`}
+                            className={`w-full h-full rounded-full block ${item.isVeg ? "bg-green-600" : "bg-red-600"
+                              }`}
                           />
                         </span>
                         <div className="truncate">
@@ -496,9 +489,8 @@ export default function MenuFeed({ data }: MenuFeedProps) {
       {/* Floating Magic Spin Action Button (Mobile/Tablet Only, lg:hidden) */}
       <button
         onClick={() => setIsSpinnerOpen(true)}
-        className={`lg:hidden fixed right-6 z-45 w-14 h-14 bg-[#023c31] text-white rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer border border-[#012d25] ${
-          cart.length > 0 ? "bottom-28" : "bottom-6"
-        }`}
+        className={`lg:hidden fixed right-6 z-45 w-14 h-14 bg-[#023c31] text-white rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer border border-[#012d25] ${cart.length > 0 ? "bottom-28" : "bottom-6"
+          }`}
       >
         <span className="text-2xl">🎲</span>
       </button>
